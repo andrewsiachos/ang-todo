@@ -150,3 +150,38 @@ h5{
 .tabActive{
   color: $brightBlue;
 }
+
+#desktopInfo{
+  padding-right: 25px;
+}
+#mobileInfo{
+  padding-right: 25px;
+  display: none;
+}
+#mobileTabs{
+  margin-top: 20px;
+  padding: 20px 0 20px 0;
+  display: none;
+}
+
+
+
+.attribution{
+  width: 50%;
+  margin: 60px auto;
+  text-align: center;
+}
+@media(max-width: 760px){
+  .wrapper{
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) and (min-width: 250px){
+  #desktopInfo{
+    display: none;
+  }
+  #mobileInfo, #mobileTabs{
+    display: flex;
+  }
+}

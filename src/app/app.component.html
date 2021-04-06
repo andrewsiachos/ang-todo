@@ -49,7 +49,7 @@
       </div>
 
 
-      <li class="flex flex-jc-sb flex-ai-c" [ngClass]="isLightActive ? 'lightLi':'darkTabs'">
+      <li id='desktopInfo' class="flex flex-jc-sb flex-ai-c" [ngClass]="isLightActive ? 'lightLi':'darkTabs'">
         <div>
           {{activeItems.length}} items left
         </div>
@@ -62,8 +62,28 @@
           Clear completed
         </div>
       </li>
+
+      <li id='mobileInfo' class="flex flex-jc-sb flex-ai-c" [ngClass]="isLightActive ? 'lightLi':'darkLi'">
+        <div>
+          {{activeItems.length}} items left
+        </div>
+        <div id='clearCompleted' (click)='onClear()'>
+          Clear completed
+        </div>
+      </li>
     </ul>
+
+    <div id='mobileTabs' class="flex flex-jc-c flex-ai-c" [ngClass]="isLightActive ? 'lightLi':'darkTabs'">
+        <h5 class="tabActive" (click)='changeTab($event)'>All</h5>
+        <h5 (click)='changeTab($event)'>Active</h5>
+        <h5 (click)='changeTab($event)'>Completed</h5>
+    </div>
   </div>
 
 
 </section>
+
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+  Coded by <a href="https://www.frontendmentor.io/profile/andrewsiachos" target="_blank">Andrew Siachos</a>.
+</div>

@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class TodoService {
 
-  active = ['one', 'two', 'three'];
-  inactive = ['four', 'five', 'six'];
+  active = ['Jog around the park 3x', '10 minutes medidation', 'Read for 1 hour', 'Pick up roceries', ];
+  inactive = ['Complete online JavaScript course', 'Complete Todo App on Frontend Mentor'];
   constructor() { }
 
 

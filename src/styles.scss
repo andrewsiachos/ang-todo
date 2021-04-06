@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+$veryLightGray: hsl(0, 0%, 98%);
+$veryLightGrayishBlue: hsl(236, 33%, 92%);
+$lightGrayishBlue: hsl(233, 11%, 84%);
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+  background-color: $veryLightGray;
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+}

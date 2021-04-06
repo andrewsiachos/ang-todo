@@ -1,0 +1,69 @@
+<header id='header' [ngClass]="isLightActive ? 'lightHeader':'darkHeader'">
+
+</header>
+
+<section id='main' class="wrapper">
+
+  <div class="flex flex-jc-sb flex-ai-c">
+    <h1 id='title'>TODO</h1>
+    <div id='iconContainer'>
+      <img src="../assets/images/icon-moon.svg" alt="moon" (click)='changeTheme($event)'>
+    </div>
+  </div>
+
+  <div id='inputContainer'>
+    <input type="text" placeholder="Create a new todo..." [ngClass]="isLightActive ? 'lightInput':'darkInput'" [(ngModel)]="newValue" (keypress)='onKeypress($event)'>
+  </div>
+
+  <div id='todoContainer'>
+    <ul>
+
+      <!--ACTIVE ITEMS -->
+      <div *ngIf='showActive'>
+        <li class=" flex flex-ai-c" *ngFor='let item of activeItems, let i=index;' [ngClass]="isLightActive ? 'lightLi':'darkLi'">
+          <div id='checkContainerActive' class="checkContainer">
+
+          </div>
+          <div id='textContainerActive' class="textContainer" (click)='onSetToInactive(i)'>
+            {{item}}
+          </div>
+          <div id='crossContainer' (click)='onDelete($event)'>
+            <img src="../assets/images/icon-cross.svg" alt="cross">
+          </div>
+        </li>
+      </div>
+
+      <!--INACTIVE ITEMS-->
+      <div *ngIf='showInactive'>
+        <li class=" flex flex-ai-c lightLi" *ngFor='let item of inactiveItems, let i=index;' [ngClass]="isLightActive ? 'lightLi':'darkLi'">
+          <div id='checkContainerInactive' class="checkContainer">
+            <img src="../assets/images/icon-check.svg" alt="check">
+          </div>
+          <div id='textContainerInactive' class="textContainer" (click)='onSetToActive(i)'>
+            {{item}}
+          </div>
+          <div id='crossContainer' (click)='onDelete($event)'>
+            <img src="../assets/images/icon-cross.svg" alt="cross">
+          </div>
+        </li>
+      </div>
+
+
+      <li class="flex flex-jc-sb flex-ai-c" [ngClass]="isLightActive ? 'lightLi':'darkTabs'">
+        <div>
+          {{activeItems.length}} items left
+        </div>
+        <div class="flex flec-ai-c">
+          <h5 class="tabActive" (click)='changeTab($event)'>All</h5>
+          <h5 (click)='changeTab($event)'>Active</h5>
+          <h5 (click)='changeTab($event)'>Completed</h5>
+        </div>
+        <div id='clearCompleted' (click)='onClear()'>
+          Clear completed
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+</section>
